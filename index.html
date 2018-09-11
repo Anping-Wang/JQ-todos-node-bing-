@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tudos</title>
+    <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+    <div class="wrapper">
+        <div class = "container">
+            <!-- 头部 -->
+            <div class="header">
+                <h1>JQTodos</h1>
+            </div>
+            <!-- 主体 -->
+            <div class="main">
+                <div class = "input-box">
+                    <input type="checkbox" class = "select-all"><span></span>
+                    <input type="text" placeholder = "干点啥呢？" class = "todo-text" autofocus = "true">
+                </div>
+                <ul class = "todos">
+                    
+                </ul>
+                <li class="hidden">
+                    <input type="checkbox" id="" class = "completed"><span></span>
+                    <span class = "todo"></span>
+                    <span class = "del">×</span>
+                </li>
+            </div>
+            <!-- 底部 -->
+            <div class="footer">
+                <label for=""><span>0</span> items left</label>
+                <ul class = "state">
+                    <li class = "all">All</li>
+                    <li class = "active">Active</li>
+                    <li class = "complete">Completed</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+<script>
+    $.ajax({
+        url : '/proxy',
+        data: {},
+        dataType : 'json',
+        success : function (res) {
+            console.log(res);
+            // var picUrl = './public/image/'+res;
+            var picUrl = '/image/'+res;                     //关键点：这个url是关键，因为服务端已经做了静态资
+                                                            // 源托管，所以要从public之后开始写（不包括public）。
+                                                            // 千万不要写相对于这个html文件的相对路径。
+            $("body").css("background","url("+picUrl+")");
+            // document.body.style.background = picUrl;
+        }
+    })
+    
+</script>
+</html>

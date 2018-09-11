@@ -1,0 +1,169 @@
+/*body{*/
+  /*background: url(../image/bg2.jpg);*/
+/*}*/
+/*body{*/
+/*background: url(../image/ShinjukuKiku_ZH-CN8446848393_1920x1080.jpg);*/
+/*}*/
+input{
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  outline:none;
+}
+.wrapper{
+  width: 600px;
+  margin: 50px auto 0;
+}
+.container{
+  width: 500px;
+  margin: 0 50px;
+}
+.todos{
+  width: 499px;
+  border-right: 1px solid #ccc;
+  background: #fff;
+}
+.header{
+  width: 100%;
+  height: 50px;
+}
+h1{
+  height: 50px;
+  color: #ff5722;
+  font-size: 38px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+.input-box{
+  position: relative;
+  margin-top: 20px;
+  background: #fff;
+}
+.input-box .todo-text{
+  width: 438px;
+}
+.input-box .select-all{
+  opacity: 0;
+
+}
+.input-box .select-all+span{
+  width: 46px;
+  height: 46px;
+  border: 2px solid #d9d9d9;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+.input-box .select-all:checked+span{
+  background: url('../image/checkmark.svg') no-repeat;
+}
+.select-all{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  margin: 0;
+}
+.todo-text{
+  margin-left: 50px;
+  padding: 0 0 0 10px;
+  width: 438px;
+  height: 48px;
+  border: 1px solid #ccc; 
+}
+.hidden{
+  width: 500px;
+  position: relative;
+  display: none;
+}
+.new-li{
+  width: 499px;
+  position: relative;
+}
+.new-li .completed{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  opacity: 0;
+  background-size: 100%;
+  border: 3px solid #ccc;
+}
+.new-li .completed:checked+span{
+  background: url('../image/checkmark.svg') no-repeat;
+}
+.new-li .completed+span{
+  height: 46px;
+  width: 46px;
+  pointer-events: none; /*让该span不会成为鼠标事件的target,避免阻挡下面的checkbox。不会阻止冒泡*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #d9d9d9;
+  border-radius: 50%;
+}
+.new-li .todo{
+
+  display: inline-block;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  width: 420px;
+  height: 49px;
+  margin-left: 50px;
+  line-height: 50px;
+  padding-left: 30px;
+  color: #000;
+}
+.new-li .del{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -10px;
+  line-height: 18px;
+  vertical-align: middle;
+  text-align: center;
+  background: #ccc;
+  cursor: pointer;
+}
+ul li .todo.line{
+  text-decoration:  line-through; 
+  color: #ccc;
+}
+.footer{
+  position: relative;
+  color: #fff;
+  width: 500px;
+  height: 50px;
+  line-height: 50px;
+}
+.footer ul{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.footer ul li{
+  padding: 0 10px;
+  line-height: 30px;
+  height: 30px;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.footer label span{
+  color: #ff5722;
+}
